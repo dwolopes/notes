@@ -19,11 +19,14 @@
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
+                @guest
+
+                @else
                 <ul class="nav navbar-nav">
                     &nbsp;
                     <li><a href="{{route('requisicao.adicionar')}}">Adicionar Requisição</a></li>
                 </ul>
-
+                @endguest
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->

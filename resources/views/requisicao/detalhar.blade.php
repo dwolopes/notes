@@ -32,7 +32,38 @@
                         {{$requisicao->status}}
                     </div>
                     <!--<a href="#" class="btn btn-primary">Adicionar Atualização</a>-->
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Adicionar Atualização</button>
+                    @if($requisicao->status == "Em andamento")
+                    <div class="row">
+                        <div class="col-md-4">
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Adicionar Atualização
+                            </button>
+                        </div>
+                        <div class="col-md-4">
+                            <button type="button" class="btn btn-success" data-toggle="modal" data-target=".bs-example-modal-lg">Concluir Requisição
+                            </button>
+                        </div>
+                        <div class="col-md-4">
+                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target=".bs-example-modal-lg">Cancelar Requisição
+                            </button>
+                        </div>
+                    </div>
+                    @else
+                    <div class="row">
+                        <div class="col-md-4">
+                            <button type="button" class="btn btn-primary" disabled="disabled" data-toggle="modal" data-target=".bs-example-modal-lg">Adicionar Atualização
+                            </button>
+                        </div>
+                        <div class="col-md-4">
+                            <button type="button" class="btn btn-success" disabled="disabled" data-toggle="modal" data-target=".bs-example-modal-lg">Concluir Requisição
+                            </button>
+                        </div>
+                        <div class="col-md-4">
+                            <button type="button" class="btn btn-danger" disabled="disabled" data-toggle="modal" data-target=".bs-example-modal-lg">Cancelar Requisição
+                            </button>
+                        </div>
+                    </div>
+                    @endif
+
                     <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
   						<div class="modal-dialog modal-lg" role="document">
     						<div class="modal-content">

@@ -17,7 +17,6 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
                     @foreach($requisicoes as $requisicao)
                             <div class="panel panel-default">
                                 <div class="panel-heading">
@@ -32,12 +31,6 @@
                                     <div class="row">
                                         <div class="col-md-4">
                                             <a href="{{route('requisicao.detalhar', $requisicao->id)}}" class="btn btn-primary">Detalhes da Requisição</a>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <a href="#" class="btn btn-success">Concluir Requisição</a>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <a href="#" class="btn btn-danger">Cancelar Requisição</a>
                                         </div>
                                     </div>
                                 </div>
