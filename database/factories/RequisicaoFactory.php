@@ -9,7 +9,7 @@ $factory->define(App\Requisicao::class, function (Faker $faker) {
         'descricao' => $faker->paragraph($nbSentences = 1),
         'setor' => $faker->company,
         'justificativa' => $faker->paragraph($nbSentences = 3),
-        'status' => 'Em andamento',
+        'status' => 'Cancelado',
         'usuario' => $faker->safeEmail,
     ];
 });

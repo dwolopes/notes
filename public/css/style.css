@@ -1,4 +1,17 @@
 
+/*Estilo da página Home*/
+
+.form-inline{
+	text-align:center;
+	padding: 1em;
+	padding-bottom: 2em;
+}
+
+#filtro{
+	width: 1.5em;
+	height: 1.5em;
+}
+
 
 /*Estilo da página detalhar*/
 .row .col-md-4{

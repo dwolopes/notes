@@ -9,14 +9,39 @@ use Illuminate\Support\Facades\DB;
 
 class RequisicaoController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $requisicoes = Requisicao::paginate(10);
+        if ($request->has('tipo_req')){
+
+            $status_filtro = $request->input('tipo_req');
+
+            if($status_filtro == ""){
+                $requisicoes = Requisicao::paginate(10);
+            }
+            else{
+
+                $requisicoes = DB::table('requisicaos')
+                ->where('status','=', $status_filtro)
+                ->orderBy('created_at', 'desc')
+                ->paginate(10)
+                ->appends('tipo_req', request('tipo_req'));
+            }
+        }
+        else{
+
+            $requisicoes = Requisicao::paginate(10);
+        }
+
         return view('home', compact('requisicoes'));
     }
 
@@ -110,4 +135,11 @@ class RequisicaoController extends Controller
     {
         //
     }
+
+    /**
+     * Filtering results
+     *
+     * @param  \App\Requisicao  $requisicao
+     * @return \Illuminate\Http\Response
+     */
 }

@@ -9,8 +9,20 @@
                     <li><a style="text-decoration:none" href="{{route('home')}}">Home</a></li>
                     <li class="active">Requisições em andamento</li>
                 </ol>
-
-
+                <form class="form-inline" method="GET" action="{{route('home')}}">
+                        <div class="form-group">
+                            <label for="tipo_req">Visualizar chamados</label>
+                            <select class="form-control" id="tipo_req" name="tipo_req">
+                                <option value=""></option>
+                                <option value="Fechado">Fechados</option>
+                                <option value="Em andamento">Em andamento</option>
+                                <option value="Cancelado">Cancelados</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-default">
+                            <img id="filtro" class="img-responsive" alt="filtro" src="{{ asset('images/filter.png')}}">
+                    </button>
+                 </form>
                 <div class="panel-body">
                     @if (session('status'))
                         <div class="alert alert-success">
