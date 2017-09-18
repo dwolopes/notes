@@ -37,9 +37,19 @@
                                 <div class="panel-body">
                                     <h4 class="card-title">Setor: {{$requisicao->setor}}</h4>
                                     <p class="card-text">{{$requisicao->descricao}}</p>
+                                    @if($requisicao->status == "Em andamento")
                                     <div class="alert alert-success" role="alert">
                                         {{$requisicao->status}}
                                     </div>
+                                    @elseif($requisicao->status == "Fechado")
+                                    <div class="alert alert-warning" role="alert">
+                                        {{$requisicao->status}}
+                                    </div>
+                                    @else
+                                    <div class="alert alert-danger" role="alert">
+                                        {{$requisicao->status}}
+                                    </div>
+                                    @endif
                                     <div class="row">
                                         <div class="col-md-4">
                                             <a href="{{route('requisicao.detalhar', $requisicao->id)}}" class="btn btn-primary">Detalhes da Requisição</a>

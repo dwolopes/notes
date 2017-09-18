@@ -17,12 +17,16 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'RequisicaoController@index')->name('home');
+Route::get('/home', 'RequisicaoController@index')->name('home')->middleware('auth');;
 
-Route::get('requisicao/adicionar', 'RequisicaoController@create')->name('requisicao.adicionar');
+Route::get('requisicao/adicionar', 'RequisicaoController@create')->name('requisicao.adicionar')->middleware('auth');;
 
-Route::put('/requisicao/salvar', 'RequisicaoController@store')->name('requisicao.salvar');
+Route::put('/requisicao/salvar', 'RequisicaoController@store')->name('requisicao.salvar')->middleware('auth');;
 
-Route::get('/requisicao/detalhar/{id}', 'RequisicaoController@show')->name('requisicao.detalhar');
+Route::get('/requisicao/detalhar/{id}', 'RequisicaoController@show')->name('requisicao.detalhar')->middleware('auth');;
 
-Route::put('/requisicao/adicionar/atualizacao/{id}', 'AtualizacaoController@create')->name('atualizacao.adicionar');
+Route::put('/requisicao/adicionar/atualizacao/{id}', 'AtualizacaoController@create')->name('atualizacao.adicionar')->middleware('auth');;
+
+Route::put('/requisicao/adicionar/cancelamento/{id}', 'AtualizacaoController@update')->name('atualizacao.cancelamento')->middleware('auth');;
+
+Route::put('/requisicao/adicionar/conclusao/{id}', 'AtualizacaoController@update')->name('atualizacao.conclusao')->middleware('auth');;

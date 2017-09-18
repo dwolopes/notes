@@ -32,7 +32,7 @@ class RequisicaoController extends Controller
 
                 $requisicoes = DB::table('requisicaos')
                 ->where('status','=', $status_filtro)
-                ->orderBy('created_at', 'desc')
+                ->orderBy('updated_at', 'desc')
                 ->paginate(10)
                 ->appends('tipo_req', request('tipo_req'));
             }

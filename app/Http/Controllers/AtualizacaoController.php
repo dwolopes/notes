@@ -91,9 +91,36 @@ class AtualizacaoController extends Controller
      * @param  \App\Atualizacao  $atualizacao
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Atualizacao $atualizacao)
+    public function update(Request $request, $id)
     {
-        //
+        $atualizacao = new Atualizacao;
+        $atualizacao->titulo_atualizacao = $request->input('titulo_atualizacao');
+        $atualizacao->atualizacao = $request->input('atualizacao');
+        $atualizacao->usuario = $request->input('usuario');
+
+        $requisicao = Requisicao::find($id);
+        if($atualizacao->titulo_atualizacao == "Cancelado"){
+            $requisicao->status = "Cancelado";
+            $requisicao->save();
+        }else{
+            $requisicao->status = "Fechado";
+            $requisicao->save();
+        }
+
+        if($requisicao->AddAtualizacoes($atualizacao)){
+            \Session::flash('flash_message',[
+            'msg'=>"A atualização foi incluída com sucesso!
+                    A partir de agora, não se pode mais atualizar essa requisição e somente acompanhar seu histórico.",
+            'class'=>"alert-sucess"
+            ]);
+        }else{
+            \Session::flash('flash_message',[
+            'msg'=>"A atualização não pode ser incluída!",
+            'class'=>"alert-danger"
+            ]);
+        }
+
+        return redirect()->route('requisicao.detalhar',$id);
     }
 
     /**
