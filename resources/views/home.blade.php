@@ -51,8 +51,17 @@
                                     </div>
                                     @endif
                                     <div class="row">
+                                            <div class="col-md-12">
+                                            </div>
+                                        </div>
+                                    <div class="row">
                                         <div class="col-md-4">
                                             <a href="{{route('requisicao.detalhar', $requisicao->id)}}" class="btn btn-primary">Detalhes da Requisição</a>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <button type="button" class="btn btn-info" value = "{{$requisicao->id}}">
+                                                Visualizar última atualização
+                                            </button>
                                         </div>
                                     </div>
                                 </div>

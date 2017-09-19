@@ -6,6 +6,7 @@ use App\Requisicao;
 use App\Atualizacao;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Response;
 
 class RequisicaoController extends Controller
 {
@@ -108,6 +109,20 @@ class RequisicaoController extends Controller
      * @param  \App\Requisicao  $requisicao
      * @return \Illuminate\Http\Response
      */
+    public function find($id)
+    {
+        $requisicao = Requisicao::find($id);
+
+        $atualizacao_recente = DB::table('atualizacaos')
+                ->where('requisicao_id','=', $id)
+                ->orderBy('created_at', 'desc')
+                ->first();
+
+        return Response::json($atualizacao_recente);
+    }
+
+
+
     public function edit(Requisicao $requisicao)
     {
         //

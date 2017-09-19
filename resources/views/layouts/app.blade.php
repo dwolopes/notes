@@ -33,5 +33,6 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/style.js') }}"></script>
 </body>
 </html>
