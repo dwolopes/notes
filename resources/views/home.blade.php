@@ -52,6 +52,21 @@
                                     @endif
                                     <div class="row">
                                             <div class="col-md-12">
+                                                <div class="panel panel-info {{$requisicao->id}}" style="display: none">
+                                                    <div class="panel-heading">Panel with panel-danger info</div>
+                                                    <div class="panel-body">
+                                                        <table class="table {{$requisicao->id}}">
+                                                            <thead>
+                                                                <th>Id atualização</th>
+                                                                <th>Titulo atualização</th>
+                                                                <th>Atualização</th>
+                                                                <th>Usuário que adicionou</th>
+                                                            </thead>
+                                                            <tbody>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     <div class="row">
@@ -59,7 +74,7 @@
                                             <a href="{{route('requisicao.detalhar', $requisicao->id)}}" class="btn btn-primary">Detalhes da Requisição</a>
                                         </div>
                                         <div class="col-md-4">
-                                            <button type="button" class="btn btn-info" value = "{{$requisicao->id}}">
+                                            <button type="button" class="btn btn-info" value ="{{$requisicao->id}}">
                                                 Visualizar última atualização
                                             </button>
                                         </div>
