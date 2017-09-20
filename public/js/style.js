@@ -3,16 +3,22 @@ $(document).ready(function(){
     	var id = $(this).val();
     	//var id = $(this).data();
     	$.get('requisicao/atualizacao/'+id, function(data){
-    		$("."+id+">tbody").append('<tr id='+id+'><td>'+data.id+'</td><td>'+data.titulo_atualizacao+'</td><td>'
+    		if (data === '{ }') {
+    			$("."+id+">tbody").append('<tr id='+id+'><td>Ainda não houve atualização para essa requisição.</td></tr>');
+    			$('.'+id).fadeIn(600);
+
+    		} else {
+    			$("."+id+">tbody").append('<tr id='+id+'><td>'+data.id+'</td><td>'+data.titulo_atualizacao+'</td><td>'
     			+data.atualizacao+'</td><td>'+data.usuario+'</td></tr>');
-    		$('.'+id).fadeIn(600);
+    			$('.'+id).fadeIn(600);
+    		}
     	});
     });
 
-    $('.btn-info').mouseout(function(){
-    	var id = $(this).val();
+    $('.panel-info').mouseleave(function(){
+    	//var id = $(this).val();
     	$("td").remove();
     	//var id = $(this).data();
-    	$('.'+id).fadeOut(800);
+    	$('.panel-info').fadeOut(800);
     });
 });

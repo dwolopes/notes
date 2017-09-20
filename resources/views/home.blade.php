@@ -53,7 +53,7 @@
                                     <div class="row">
                                             <div class="col-md-12">
                                                 <div class="panel panel-info {{$requisicao->id}}" style="display: none">
-                                                    <div class="panel-heading">Panel with panel-danger info</div>
+                                                    <div class="panel-heading">Atualização</div>
                                                     <div class="panel-body">
                                                         <table class="table {{$requisicao->id}}">
                                                             <thead>

@@ -111,6 +111,7 @@ class RequisicaoController extends Controller
      */
     public function find($id)
     {
+        
         $requisicao = Requisicao::find($id);
 
         $atualizacao_recente = DB::table('atualizacaos')
