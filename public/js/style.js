@@ -3,11 +3,11 @@ $(document).ready(function(){
     	var id = $(this).val();
     	//var id = $(this).data();
     	$.get('requisicao/atualizacao/'+id, function(data){
-    		if (data === '{ }') {
-    			$("."+id+">tbody").append('<tr id='+id+'><td>Ainda não houve atualização para essa requisição.</td></tr>');
+    		if(data.success ===	 false) {
+    			$("."+id+">tbody").append('<tr id='+id+'><td>'+data.error_message+'</td></tr>');
     			$('.'+id).fadeIn(600);
 
-    		} else {
+    		}else {
     			$("."+id+">tbody").append('<tr id='+id+'><td>'+data.id+'</td><td>'+data.titulo_atualizacao+'</td><td>'
     			+data.atualizacao+'</td><td>'+data.usuario+'</td></tr>');
     			$('.'+id).fadeIn(600);

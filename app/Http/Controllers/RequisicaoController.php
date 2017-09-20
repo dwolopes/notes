@@ -111,7 +111,7 @@ class RequisicaoController extends Controller
      */
     public function find($id)
     {
-        
+
         $requisicao = Requisicao::find($id);
 
         $atualizacao_recente = DB::table('atualizacaos')
@@ -119,7 +119,18 @@ class RequisicaoController extends Controller
                 ->orderBy('created_at', 'desc')
                 ->first();
 
-        return Response::json($atualizacao_recente);
+
+                Response::json($atualizacao_recente);
+
+                if ($atualizacao_recente != null) {
+                    $atualizacao_recente->success = true;
+                    return Response::json($atualizacao_recente);
+                }else{
+                    return Response::json([
+                          "success" => false,
+                          "error_message" => "Ainda não existe atualização para essa requisição."
+                    ]);
+                }
     }
 
 

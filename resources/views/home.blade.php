@@ -54,7 +54,7 @@
                                             <div class="col-md-12">
                                                 <div class="panel panel-info {{$requisicao->id}}" style="display: none">
                                                     <div class="panel-heading">Atualização</div>
-                                                    <div class="panel-body">
+                                                    <div class="panel-body table-responsive">
                                                         <table class="table {{$requisicao->id}}">
                                                             <thead>
                                                                 <th>Id atualização</th>
