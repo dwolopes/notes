@@ -87,9 +87,6 @@
 															<div class="form-group col-md-6">
 							  									<center><label for="requerente">Titulo da Atualização</label></center>
 							  									<input type="text" class="form-control" id="titulo_atualizacao" name="titulo_atualizacao" placeholder="Dê um titulo a essa atualização" required>
-							  									<div class="invalid-feedback">
-	        														Por favor, informe um título.
-	      														</div>
 															</div>
 															<div class="form-group col-md-6">
 							  									<center><label for="user">Usuário</label></center>

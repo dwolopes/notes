@@ -21,4 +21,5 @@ $(document).ready(function(){
         //var id = $(this).data();
         $('.panel-info').fadeOut(800);
     });
+
 });
