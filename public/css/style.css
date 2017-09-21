@@ -9,6 +9,19 @@
 	font-weight: 1000;
 }
 
+.navbar-toggle .collapsed{
+    background-color:rgb(57,73,171);
+}
+
+.navbar-default .navbar-toggle {
+    background-color:rgb(202, 111, 111);
+    border-color: rgb(202, 111, 111);
+}
+
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+    background-color:rgb(192, 57, 43);
+}
+
 .navbar-default .navbar-nav>li>a, .navbar-default .navbar-text {
     color: rgb(253, 253, 253);
 	font-weight: 1000;
@@ -159,4 +172,11 @@ a:focus, a:hover {
     color: rgb(57,73,171);
     background-color: rgba(212, 33, 33, 0.26);
     border-color: #ddd;
+}
+
+/*Logomarca*/
+
+#logo{
+    width: 80px;
+    margin-top: -10px;
 }
