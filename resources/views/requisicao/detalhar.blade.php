@@ -256,6 +256,9 @@
                     <h4 class="card-title">Atualização: <b>{{$atualizacao->titulo_atualizacao}}</b></h4>
                     <p class="card-text">{{$atualizacao->atualizacao}}</p>
                 </div>
+                <div class="panel-footer">
+                    <p><b>Data da adição:</b> {{ Carbon\Carbon::parse($atualizacao->created_at)->format('d-m-Y H:i:s') }}</p>
+                </div>
 			</div>
 		</div>
 	</div>

@@ -124,6 +124,8 @@ class RequisicaoController extends Controller
 
                 if ($atualizacao_recente != null) {
                     $atualizacao_recente->success = true;
+                    $date = date_create($atualizacao_recente->created_at);
+                    $atualizacao_recente->dataBR = date_format($date,'d/m/Y - H:i:s');
                     return Response::json($atualizacao_recente);
                 }else{
                     return Response::json([

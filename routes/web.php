@@ -31,6 +31,6 @@ Route::put('/requisicao/adicionar/cancelamento/{id}', 'AtualizacaoController@upd
 
 Route::put('/requisicao/adicionar/conclusao/{id}', 'AtualizacaoController@update')->name('atualizacao.conclusao')->middleware('auth');
 
-Route::get('requisicao/atualizacao/{id}', 'RequisicaoController@find');
+Route::get('requisicao/atualizacao/{id}', 'RequisicaoController@find')->middleware('auth');
 
 

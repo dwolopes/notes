@@ -57,7 +57,7 @@
                                                     <div class="panel-body table-responsive">
                                                         <table class="table {{$requisicao->id}}">
                                                             <thead>
-                                                                <th>Id atualização</th>
+                                                                <th>Data e hora</th>
                                                                 <th>Titulo atualização</th>
                                                                 <th>Atualização</th>
                                                                 <th>Usuário que adicionou</th>

@@ -8,7 +8,7 @@ $(document).ready(function(){
                 $('.'+id).fadeIn(600);
 
             }else {
-                $("."+id+">tbody").append('<tr id='+id+'><td>'+data.id+'</td><td>'+data.titulo_atualizacao+'</td><td>'
+                $("."+id+">tbody").append('<tr id='+id+'><td>'+data.dataBR+'</td><td>'+data.titulo_atualizacao+'</td><td>'
                 +data.atualizacao+'</td><td>'+data.usuario+'</td></tr>');
                 $('.'+id).fadeIn(600);
             }
