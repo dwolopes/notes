@@ -13,7 +13,7 @@
                 <div class="panel-heading">
                 	<div class="row">
                 		<div class="col-md-3">
-                			<b>Número da Requisição:</b> {{$requisicao->id}}
+                			<b>Número da Requisição:</b>{{$requisicao->id}}
                 		</div>
                 		<div class="col-md-3">
                 			<b>CPF do Requerente:</b> {{$requisicao->cpf}}

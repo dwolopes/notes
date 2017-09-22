@@ -2,6 +2,11 @@
 
 @section('content')
 <div class="container">
+    <div class="row" id="logoligin">
+        <div class="col-md-12" align="center">
+            <img class="image-responsive" alt="logo" id="logo" src="{{ asset('images/loginLogo.png')}}">
+        </div>
+    </div>
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
