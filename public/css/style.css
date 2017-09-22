@@ -180,3 +180,10 @@ a:focus, a:hover {
     width: 80px;
     margin-top: -10px;
 }
+
+/*Modal de adição de atualização*/
+
+.panel-heading h4, .panel-heading p {
+    color: white;
+    font-weight: 700;
+}
