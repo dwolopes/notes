@@ -22,7 +22,7 @@
 							</div>
 							<div class="form-group col-md-6">
 						  		<label for="cpf" class="col-md-6 col-md-offset-5">CPF</label>
-						  		<input type="text" class="form-control" id="cpf" name="cpf" placeholder="nº do CPF do requerente" >
+						  		<input type="text" class="form-control" id="cpf" name="cpf" placeholder="nº do CPF do requerente" maxlength="11">
 							</div>
 						</div>
 						<div class="form-group">
