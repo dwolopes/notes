@@ -7,7 +7,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-##About the system
+## About the System
 
 Notes is a warehouse control system and orders. A simple, general system whose you can place purchase orders, update order information, and track order progress. The system can be upgraded and expanded to include reports, new filters and so on.
 
